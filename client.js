@@ -1,4 +1,5 @@
 const net = require('net')
+const parser = require('./parser')
 
 class TrunkeBodyParser{
     constructor(){
@@ -67,7 +68,7 @@ class ResponseParser{
         return this.bodyParser && this.bodyParser.isFinish
     }
     get response(){
-        console.log(this.statusLine)
+        //console.log(this.statusLine)
         this.statusLine.match(/HTTP\/1.1 ([0-9]+) ([\s\S]+)/);
         return {
             statusCode: RegExp.$1,
@@ -204,5 +205,5 @@ void async function (){
         }
     });
     let response = await request.send();
-    console.log(response)
+    let dom =  parser.parseHTML(response.body)
 }()
