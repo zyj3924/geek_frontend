@@ -1,5 +1,6 @@
 
 const css  = require('css')
+const layout = require('./layout')
 const EOF = Symbol('EOF')
 let currentToken = null
 let currentAttribute = null
@@ -140,6 +141,7 @@ function emit(t){
             if (t.name === 'style') {
                 addCssRules(top.children[0].content)
             }
+            layout(top)
             stack.pop()
             currentTextNode = null
         }
