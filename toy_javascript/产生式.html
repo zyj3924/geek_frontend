@@ -1,0 +1,35 @@
+词法：InputElement
+
+InputElement ::= WhiteSpace | LineTerminator | Comment | Token
+
+WhiteSpace ::= " " | "　"
+
+LineTerminator ::= "\n" | "\r"
+
+Comment ::= SingleLineComment | MultiLineComment
+SingleLineComment ::= "/" "/" <any>*
+MultiLineComment ::= "/" "*" ([^*] | "*" [^/])* "*" "/"
+
+Token ::= Literal | Keywords | Identifier | Punctuator
+Literal ::= NumberLiteral | BooleanLiteral | StringLiteral | NullLiteral
+Keywords ::= "if" | "else" | "for" | "function" | ......
+Punctuator ::= "+" | "-" | "*" | "/" | "{" | "}" | ......
+
+
+
+
+语法：Program
+
+Program ::= ExpressionStatement | IfStatement | ForStatement
+        | WhileStatement | BreakStatement | ContinueStatement
+        | ReturnStatement | ThrowStatement | TryStatement
+        | VariableDeclaration | FunctionDeclaration | ClassDeclaration
+        | Block
+
+IfStatement ::= "if" "(" Expression ")" Statement
+
+Block ::= "{" Statement "}"
+
+TryStatement ::= "try" "{" Statement+ "}" "catch" "(" Expression ")" "{" Statement+ "}"
+
+
