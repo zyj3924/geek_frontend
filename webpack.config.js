@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './componentiztion/main.js',
+    entry: './componentiztion/gesture.js',
     module: {
         rules: [
             {

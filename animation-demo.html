@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .carousel{
+            width:500px;
+            height:280px;
+            overflow: hidden;
+            white-space: nowrap
+        }
+        .carousel>div{
+            width:500px;
+            height:280px;
+            background-size:contain;
+            display: inline-block;
+            transition:ease .3s
+        }
+        #demo{
+            width: 100px;
+            height: 100px;
+            background:rgb(42, 213, 156)
+        }
+        #demo2{
+            margin-top:40px;
+            width: 100px;
+            height: 100px;
+            background:rgb(182, 85, 24)
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <div id="demo2"></div>
+    <button id="start">start</button>
+    <button id="pause">pause</button>
+    <button id="resume">resume</button>
+    <script src='./main.js'></script>
+    <script>
+        document.documentElement.addEventListener('tap', () => {
+            console.log('tap tap!!!')
+        })
+        document.documentElement.addEventListener('press', () => {
+            console.log('press press!!!')
+        })
+        document.documentElement.addEventListener('panStart', () => {
+            console.log('panStart panStart!!!')
+        })
+        document.documentElement.addEventListener('panEnd', () => {
+            console.log('panEnd panEnd!!!')
+        })
+    </script>
+</body>
+</html>
